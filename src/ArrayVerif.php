@@ -124,7 +124,7 @@ class ArrayVerif
      */
     public static function valueExists($value = self::DEFAULT_VALUE, $array = null)
     {
-        (null === $array) ? ((array) self::$defaultArray) : ((array) $array);
+        (null === $array) ? self::$defaultArray : ((array) $array);
 
         return in_array($value, $array);
     }
