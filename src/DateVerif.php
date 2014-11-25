@@ -37,11 +37,7 @@ class DateVerif
         $date     = getdate();
         $yearDate = $date['year'];
 
-        if ($year == $yearDate) {
-            return true;
-        } else {
-            return false;
-        }
+        return $year === $yearDate;
     }
 
     /**
@@ -55,11 +51,7 @@ class DateVerif
         $date      = getdate();
         $monthDate = $date['month'];
 
-        if ($month == $monthDate) {
-            return true;
-        } else {
-            return false;
-        }
+        return $month === $monthDate;
     }
 
     /**
@@ -73,10 +65,6 @@ class DateVerif
         $date    = getdate();
         $dayDate = $date['mday'];
 
-        if ($day == $dayDate) {
-            return true;
-        } else {
-            return false;
-        }
+        return $day === $dayDate;
     }
 }

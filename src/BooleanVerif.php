@@ -17,11 +17,7 @@ class BooleanVerif
      */
     public static function isTrue($boolean = true)
     {
-        if (true === $boolean) {
-            return true;
-        } else {
-            return false;
-        }
+        return true === $boolean;
     }
 
     /**
@@ -30,10 +26,6 @@ class BooleanVerif
      */
     public static function isFalse($boolean = false)
     {
-        if (false === $boolean) {
-            return true;
-        } else {
-            return false;
-        }
+        return false === $boolean;
     }
 }

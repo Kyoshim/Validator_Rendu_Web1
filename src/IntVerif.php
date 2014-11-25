@@ -14,7 +14,7 @@ class IntVerif
     /**
      * @var int
      */
-    private static $defaultLastNumber  = 20;
+    private static $defaultLastNumber = 20;
 
     /**
      * @param int $integer
@@ -23,11 +23,7 @@ class IntVerif
      */
     public static function equal($integer = self::INTEGER_DEFAULT, $number = null)
     {
-        if ($integer == $number) {
-            return true;
-        } else {
-            return false;
-        }
+        return $integer === $number;
     }
 
     /**
@@ -37,11 +33,7 @@ class IntVerif
      */
     public static function higher($integer = self::INTEGER_DEFAULT, $number = null)
     {
-        if ($integer > $number) {
-            return true;
-        } else {
-            return false;
-        }
+        return $integer > $number;
     }
 
     /**
@@ -51,11 +43,7 @@ class IntVerif
      */
     public static function lower($integer = self::INTEGER_DEFAULT, $number = null)
     {
-        if ($integer < $number) {
-            return true;
-        } else {
-            return false;
-        }
+        return $integer < $number;
     }
 
     /**
@@ -69,11 +57,7 @@ class IntVerif
         $firstNumberNotNull = (null === $firstNumber) ? self::$defaultFirstNumber : ((int) $firstNumber);
         $lastNumberNotNull  = (null === $lastNumber) ? self::$defaultLastNumber : ((int) $lastNumber);
 
-        if (($integer >= $firstNumberNotNull) && ($integer <= $lastNumberNotNull)) {
-            return true;
-        } else {
-            return false;
-        }
+        return ($integer >= $firstNumberNotNull) && ($integer <= $lastNumberNotNull);
     }
 
     /**
@@ -82,11 +66,7 @@ class IntVerif
      */
     public static function negative($integer = self::INTEGER_DEFAULT)
     {
-        if ($integer <= 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return $integer <= 0;
     }
 
     /**
@@ -95,10 +75,6 @@ class IntVerif
      */
     public static function positive($integer = self::INTEGER_DEFAULT)
     {
-        if ($integer >= 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return $integer >= 0;
     }
 }
