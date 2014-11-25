@@ -33,8 +33,10 @@ class DateVerif
     public static function isYear($year = null)
     {
         (null === $year) ? $year = self::$defaultYear : ((int) $year);
-        $date = getdate();
+
+        $date     = getdate();
         $yearDate = $date['year'];
+
         if ($year == $yearDate) {
             return true;
         } else {
@@ -49,8 +51,10 @@ class DateVerif
     public static function isMonth($month = null)
     {
         (null === $month) ? $month = self::$defaultMounth : ((int) $month);
-        $date = getdate();
+
+        $date      = getdate();
         $monthDate = $date['month'];
+
         if ($month == $monthDate) {
             return true;
         } else {
@@ -65,13 +69,14 @@ class DateVerif
     public static function isDay($day = null)
     {
         (null === $day) ? $day = self::$defaultDay : ((int) $day);
-        $date = getdate();
+
+        $date    = getdate();
         $dayDate = $date['mday'];
+
         if ($day == $dayDate) {
             return true;
         } else {
             return false;
         }
     }
-
 }

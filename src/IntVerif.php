@@ -6,9 +6,15 @@ class IntVerif
 {
     const INTEGER_DEFAULT = 4;
 
+    /**
+     * @var int
+     */
     private static $defaultFirstNumber = 3;
 
-    private static $defaultLastNumber = 20;
+    /**
+     * @var int
+     */
+    private static $defaultLastNumber  = 20;
 
     /**
      * @param int $integer
@@ -61,7 +67,8 @@ class IntVerif
     public static function between($integer = self::INTEGER_DEFAULT, $firstNumber = null, $lastNumber = null)
     {
         $firstNumberNotNull = (null === $firstNumber) ? self::$defaultFirstNumber : ((int) $firstNumber);
-        $lastNumberNotNull = (null === $lastNumber) ? self::$defaultLastNumber : ((int) $lastNumber);
+        $lastNumberNotNull  = (null === $lastNumber) ? self::$defaultLastNumber : ((int) $lastNumber);
+
         if (($integer >= $firstNumberNotNull) && ($integer <= $lastNumberNotNull)) {
             return true;
         } else {
@@ -94,5 +101,4 @@ class IntVerif
             return false;
         }
     }
-
 }

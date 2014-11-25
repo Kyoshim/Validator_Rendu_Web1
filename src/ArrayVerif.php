@@ -42,6 +42,7 @@ class ArrayVerif
     public static function emptyArray($array = null)
     {
         (null === $array) ? self::$defaultArray : ((array) $array);
+
         if ($array === array()) {
             return true;
         } else {
@@ -59,6 +60,7 @@ class ArrayVerif
     public static function numberElementsOperator($operator = self::OPERATOR_EQUAL, $array = null, $numberElement = self::DEFAULT_NUMBER_ELEMENT)
     {
         (null === $array) ? $array = self::$defaultArray : ((array) $array);
+
         if (false === in_array($operator, [
                 self::OPERATOR_EQUAL,
                 self::OPERATOR_SUPERIOR,
@@ -102,6 +104,7 @@ class ArrayVerif
         (null === $array) ? $array = self::$defaultArray : ((array) $array);
         (null === $firstArray) ? $firstArray = self::$defaultNumberFirstArray : ((int) $firstArray);
         (null === $lastArray) ? $lastArray = self::$defaultNumberLastArray : ((int) $lastArray);
+
         $numberOfElement = count($array);
         if (($numberOfElement >= $firstArray) && ($numberOfElement <= $lastArray)) {
             return true;
@@ -118,6 +121,7 @@ class ArrayVerif
     public static function keyExists($key = self::DEFAULT_KEY, $array = null)
     {
         (null === $array) ? $array = self::$defaultArray : ((array) $array);
+
         if (array_key_exists($key, $array)) {
             return true;
         } else {
@@ -133,11 +137,11 @@ class ArrayVerif
     public static function valueExists($value = self::DEFAULT_VALUE, $array = null)
     {
         (null === $array) ? self::$defaultArray : ((array) $array);
+
         if (in_array($value, $array)) {
             return true;
         } else {
             return false;
         }
     }
-
 }
