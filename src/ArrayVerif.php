@@ -112,7 +112,7 @@ class ArrayVerif
      */
     public static function keyExists($key = self::DEFAULT_KEY, $array = null)
     {
-        (null === $array) ? ((array) $array = self::$defaultArray) : ((array) $array);
+        (null === $array) ? $array = self::$defaultArray : ((array) $array);
 
         return array_key_exists($key, $array);
     }
