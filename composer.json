@@ -1,0 +1,17 @@
+{
+    "require": {
+        "cocur/slugify": "0.10.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.2"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Rendu\\Verification\\": "src"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
