@@ -2,10 +2,6 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-$intVerif = new \Rendu\Verification\IntVerif();
-
-//$intVerif->equal($intVerif::INTEGER_DEFAULT, 4);
-
 //INT
 
 //Verif si le nombre est égal à integer
@@ -74,4 +70,6 @@ echo \Rendu\Verification\ArrayVerif::valueExists('test', array('test', 'la', 'su
 
 //Date
 
-
+echo \Rendu\Verification\DateVerif::isYear();
+echo \Rendu\Verification\DateVerif::isMonth();
+echo \Rendu\Verification\DateVerif::isDay();

@@ -17,7 +17,6 @@ class IntVerif
      */
     public static function equal($integer = self::INTEGER_DEFAULT, $number = null)
     {
-        //($integer == $number) ? true : false;
         if ($integer == $number) {
             return true;
         } else {
@@ -32,7 +31,6 @@ class IntVerif
      */
     public static function higher($integer = self::INTEGER_DEFAULT, $number = null)
     {
-        //($integer > $number) ? true : false;
         if ($integer > $number) {
             return true;
         } else {
@@ -47,7 +45,6 @@ class IntVerif
      */
     public static function lower($integer = self::INTEGER_DEFAULT, $number = null)
     {
-        //($integer < $number) ? true : false;
         if ($integer < $number) {
             return true;
         } else {
@@ -55,6 +52,12 @@ class IntVerif
         }
     }
 
+    /**
+     * @param int $integer
+     * @param null $firstNumber
+     * @param null $lastNumber
+     * @return bool
+     */
     public static function between($integer = self::INTEGER_DEFAULT, $firstNumber = null, $lastNumber = null)
     {
         $firstNumberNotNull = (null === $firstNumber) ? self::$defaultFirstNumber : ((int) $firstNumber);
@@ -66,23 +69,30 @@ class IntVerif
         }
     }
 
+    /**
+     * @param int $integer
+     * @return bool
+     */
     public static function negative($integer = self::INTEGER_DEFAULT)
     {
-        //($integer < 0) ? true : false;
-        if ($integer < 0) {
+        if ($integer <= 0) {
             return true;
         } else {
             return false;
         }
     }
 
+    /**
+     * @param int $integer
+     * @return bool
+     */
     public static function positive($integer = self::INTEGER_DEFAULT)
     {
-        //($integer > 0) ? true : false;
-        if ($integer > 0) {
+        if ($integer >= 0) {
             return true;
         } else {
             return false;
         }
     }
+
 }

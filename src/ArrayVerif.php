@@ -20,10 +20,25 @@ class ArrayVerif
     const OPERATOR_INFERIOR = 4;
     const OPERATOR_INFERIOR_EQUAL = 5;
 
+    /**
+     * @var int
+     */
     private static $defaultNumberFirstArray = 3;
+
+    /**
+     * @var int
+     */
     private static $defaultNumberLastArray = 8;
+
+    /**
+     * @var array
+     */
     private static $defaultArray = array('salut');
 
+    /**
+     * @param null $array
+     * @return bool
+     */
     public static function emptyArray($array = null)
     {
         (null === $array) ? self::$defaultArray : ((array) $array);
@@ -34,6 +49,13 @@ class ArrayVerif
         }
     }
 
+    /**
+     * @param int $operator
+     * @param null $array
+     * @param int $numberElement
+     * @return bool|string
+     * @throws \Exception
+     */
     public static function numberElementsOperator($operator = self::OPERATOR_EQUAL, $array = null, $numberElement = self::DEFAULT_NUMBER_ELEMENT)
     {
         (null === $array) ? $array = self::$defaultArray : ((array) $array);
@@ -69,6 +91,12 @@ class ArrayVerif
         return $operatorSelected;
     }
 
+    /**
+     * @param null $array
+     * @param null $firstArray
+     * @param null $lastArray
+     * @return bool
+     */
     public static function numberElementsBetween($array = null, $firstArray = null, $lastArray = null)
     {
         (null === $array) ? $array = self::$defaultArray : ((array) $array);
@@ -82,6 +110,11 @@ class ArrayVerif
         }
     }
 
+    /**
+     * @param int $key
+     * @param null $array
+     * @return bool
+     */
     public static function keyExists($key = self::DEFAULT_KEY, $array = null)
     {
         (null === $array) ? $array = self::$defaultArray : ((array) $array);
@@ -92,6 +125,11 @@ class ArrayVerif
         }
     }
 
+    /**
+     * @param string $value
+     * @param null $array
+     * @return bool
+     */
     public static function valueExists($value = self::DEFAULT_VALUE, $array = null)
     {
         (null === $array) ? self::$defaultArray : ((array) $array);
@@ -101,4 +139,5 @@ class ArrayVerif
             return false;
         }
     }
+
 } 

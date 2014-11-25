@@ -11,21 +11,30 @@ namespace Rendu\Verification;
 
 class BooleanVerif
 {
+    /**
+     * @param bool $boolean
+     * @return bool
+     */
     public static function isTrue($boolean = true)
     {
-        if (true == $boolean) {
+        if (true === $boolean) {
             return true;
         } else {
             return false;
         }
     }
 
+    /**
+     * @param bool $boolean
+     * @return bool
+     */
     public static function isFalse($boolean = false)
     {
-        if (false == $boolean) {
+        if (false === $boolean) {
             return true;
         } else {
             return false;
         }
     }
+
 } 
