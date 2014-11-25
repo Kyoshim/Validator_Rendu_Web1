@@ -8,7 +8,6 @@
 
 namespace Rendu\Verification;
 
-
 class ArrayVerif
 {
     const DEFAULT_KEY = 3;
