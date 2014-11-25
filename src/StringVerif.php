@@ -16,7 +16,7 @@ class StringVerif
     /**
      * @var int
      */
-    private static $defaultLastString  = 45;
+    private static $defaultLastString = 45;
 
     /**
      * @param string $string
@@ -27,11 +27,7 @@ class StringVerif
     {
         $stringLengthNumber = mb_strlen($string);
 
-        if ($stringLengthNumber === $stringLength) {
-            return true;
-        } else {
-            return false;
-        }
+        return $stringLengthNumber === $stringLength;
     }
 
     /**
@@ -43,11 +39,7 @@ class StringVerif
     {
         $stringLengthNumber = mb_strlen($string);
 
-        if ($stringLengthNumber > $stringLength) {
-            return true;
-        } else {
-            return false;
-        }
+        return $stringLengthNumber > $stringLength;
     }
 
     /**
@@ -59,11 +51,7 @@ class StringVerif
     {
         $stringLengthNumber = mb_strlen($string);
 
-        if ($stringLengthNumber < $stringLength) {
-            return true;
-        } else {
-            return false;
-        }
+        return $stringLengthNumber < $stringLength;
     }
 
     /**
@@ -78,11 +66,7 @@ class StringVerif
         $firstStringNotNull = (null === $firstString) ? self::$defaultFirstString : ((int) $firstString);
         $lastStringNotNull  = (null === $lastString) ? self::$defaultLastString : ((int) $lastString);
 
-        if (($stringLengthNumber >= $firstStringNotNull) && ($stringLengthNumber <= $lastStringNotNull)) {
-            return true;
-        } else {
-            return false;
-        }
+        return ($stringLengthNumber >= $firstStringNotNull) && ($stringLengthNumber <= $lastStringNotNull);
     }
 
     /**
@@ -95,12 +79,7 @@ class StringVerif
         $beginSpacePosi     = mb_strpos($string, ' ');
         $lastSpacePosi      = mb_strrpos($string, ' ');
 
-        if (($beginSpacePosi === 0) && (($lastSpacePosi + 1) === $stringLengthNumber)) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return ($beginSpacePosi === 0) && (($lastSpacePosi + 1) === $stringLengthNumber);
     }
 
     /**
@@ -111,10 +90,6 @@ class StringVerif
     {
         $spaceExist = mb_substr_count($string, ' ');
 
-        if (0 === $spaceExist) {
-            return true;
-        } else {
-            return false;
-        }
+        return 0 === $spaceExist;
     }
 }
