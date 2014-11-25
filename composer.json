@@ -8,7 +8,8 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Rendu\\Verification\\": "src"
+            "Rendu\\Verification\\": "src",
+            "Tests\\Rendu\\Verification\\": "tests"
         }
     },
     "config": {
